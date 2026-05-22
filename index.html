@@ -1,0 +1,3667 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Tags -->
+  <title>Bureau Debout en Leasing | Configurez votre bureau ergonomique dès 29€/mois</title>
+  <meta name="description" content="Louez votre bureau debout électrique sur mesure. Livré et installé. Sans engagement. Configurez et obtenez votre prix mensuel de leasing en ligne immédiatement.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Bureau Debout en Leasing | Personnalisable en temps réel">
+  <meta property="og:description" content="Louez votre bureau debout électrique avec configurateur interactif. À partir de 29€/mois, livraison et installation incluses.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?auto=format&fit=crop&w=1200&q=80">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* DESIGN SYSTEM & VARIABLES */
+    :root {
+      --color-primary: #1A3A5C;
+      --color-primary-rgb: 26, 58, 92;
+      --color-secondary: #0D8A7A;
+      --color-secondary-hover: #0a7365;
+      --color-bg: #F8FAFC;
+      --color-bg-light: #EFF6FF;
+      --color-bg-teal: #E8F4F2;
+      --color-text: #1E293B;
+      --color-muted: #64748B;
+      --color-success: #16A34A;
+      --color-warning: #F59E0B;
+      --color-error: #DC2626;
+      --color-border: #E2E8F0;
+      --color-white: #FFFFFF;
+      
+      --font-headings: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      
+      --radius-lg: 16px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+      
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 8px 30px rgba(26, 58, 92, 0.06);
+      --shadow-lg: 0 12px 40px rgba(26, 58, 92, 0.1);
+      
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    /* BASE STYLE */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-headings);
+      color: var(--color-primary);
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 1.05rem;
+      color: var(--color-text);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* CONTAINER */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+    }
+
+    /* SCROLL PROGRESS BAR */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--color-secondary), var(--color-primary));
+      width: 0%;
+      z-index: 1001;
+      transition: width 0.1s ease-out;
+    }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 28px;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+      outline: none;
+    }
+
+    .btn-primary {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      box-shadow: 0 4px 14px rgba(26, 58, 92, 0.2);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(26, 58, 92, 0.3);
+      opacity: 0.95;
+    }
+
+    .btn-primary:active {
+      transform: translateY(1px);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--color-secondary);
+      border: 2px solid var(--color-secondary);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--color-bg-teal);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary:active {
+      transform: translateY(1px);
+    }
+
+    .btn-focus-visible:focus-visible {
+      outline: 3px solid var(--color-secondary);
+      outline-offset: 2px;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 80px;
+      background-color: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--color-border);
+      z-index: 1000;
+      transition: var(--transition);
+    }
+
+    .navbar.scrolled {
+      height: 70px;
+      box-shadow: var(--shadow-sm);
+      background-color: rgba(255, 255, 255, 0.95);
+    }
+
+    .navbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-headings);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+
+    .logo svg {
+      width: 32px;
+      height: 32px;
+      fill: var(--color-secondary);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--color-text);
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: var(--color-secondary);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--color-secondary);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    /* Hamburger Menu */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 1002;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 26px;
+      height: 3px;
+      background-color: var(--color-primary);
+      border-radius: 3px;
+      transition: var(--transition);
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+      transform: translateY(9px) rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+      transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      padding: 160px 0 100px 0;
+      background: linear-gradient(135deg, #FFFFFF 0%, #F3F8FC 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -10%;
+      right: -10%;
+      width: 50%;
+      height: 80%;
+      background: radial-gradient(circle, rgba(13, 138, 122, 0.05) 0%, transparent 70%);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-content h1 {
+      font-size: 3.8rem;
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+
+    .hero-content h1 span {
+      color: var(--color-secondary);
+      font-style: italic;
+    }
+
+    .hero-content .subtitle {
+      font-size: 1.3rem;
+      color: var(--color-muted);
+      margin-bottom: 36px;
+      max-width: 540px;
+      font-weight: 300;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    /* Reassurance Bar */
+    .reassurance-bar {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px 30px;
+    }
+
+    .reassurance-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--color-primary);
+    }
+
+    .reassurance-item svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--color-secondary);
+      flex-shrink: 0;
+    }
+
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-visual svg {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      filter: drop-shadow(0 20px 40px rgba(26, 58, 92, 0.12));
+    }
+
+    /* SECTIONS COMMON */
+    section {
+      padding: 100px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 64px auto;
+    }
+
+    .section-header h2 {
+      font-size: 2.8rem;
+      margin-bottom: 16px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-header h2::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: var(--color-secondary);
+    }
+
+    .section-header p {
+      color: var(--color-muted);
+      font-size: 1.15rem;
+    }
+
+    /* BENEFITS SECTION */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .benefit-card {
+      background-color: var(--color-white);
+      padding: 40px 32px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--color-border);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--color-secondary);
+    }
+
+    .benefit-icon-wrapper {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background-color: var(--color-bg-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      transition: var(--transition);
+    }
+
+    .benefit-card:hover .benefit-icon-wrapper {
+      background-color: var(--color-secondary);
+    }
+
+    .benefit-icon-wrapper svg {
+      width: 32px;
+      height: 32px;
+      fill: var(--color-primary);
+      transition: var(--transition);
+    }
+
+    .benefit-card:hover .benefit-icon-wrapper svg {
+      fill: var(--color-white);
+    }
+
+    .benefit-card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 16px;
+    }
+
+    .benefit-card p {
+      font-size: 0.95rem;
+      color: var(--color-muted);
+    }
+
+    /* SPECIFICATIONS SECTION */
+    .specs-section {
+      background-color: var(--color-white);
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .specs-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .specs-content h3 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
+
+    .specs-content p {
+      margin-bottom: 30px;
+      color: var(--color-muted);
+    }
+
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--color-border);
+    }
+
+    .specs-table tr {
+      transition: var(--transition);
+    }
+
+    .specs-table tr:nth-child(even) {
+      background-color: #F8FAFC;
+    }
+
+    .specs-table tr:hover {
+      background-color: var(--color-bg-teal);
+    }
+
+    .specs-table td {
+      padding: 16px 24px;
+      font-size: 0.95rem;
+    }
+
+    .specs-table td:first-child {
+      font-weight: 700;
+      color: var(--color-primary);
+      width: 40%;
+    }
+
+    .specs-table td:last-child {
+      color: var(--color-text);
+    }
+
+    /* PRICING SECTION */
+    .pricing {
+      background-color: #F1F5F9;
+    }
+
+    .pricing-toggle-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 50px;
+    }
+
+    .pricing-toggle-label {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      margin-bottom: 16px;
+    }
+
+    .pricing-tabs {
+      display: flex;
+      background-color: var(--color-white);
+      padding: 6px;
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--color-border);
+    }
+
+    .pricing-tab {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--color-muted);
+      border-radius: calc(var(--radius-sm) - 2px);
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+      background: none;
+    }
+
+    .pricing-tab.active {
+      background-color: var(--color-secondary);
+      color: var(--color-white);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      align-items: stretch;
+      margin-bottom: 50px;
+    }
+
+    .pricing-card {
+      background-color: var(--color-white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-border);
+      padding: 48px 36px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .pricing-card.popular {
+      border: 2px solid var(--color-secondary);
+      box-shadow: var(--shadow-md);
+      transform: scale(1.03);
+    }
+
+    .pricing-card.popular:hover {
+      transform: scale(1.03) translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: -16px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var(--color-secondary);
+      color: var(--color-white);
+      padding: 6px 16px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      border-radius: 30px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .pricing-header h3 {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+
+    .pricing-commitment {
+      font-size: 0.9rem;
+      color: var(--color-muted);
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+
+    .pricing-price {
+      margin-bottom: 30px;
+      color: var(--color-primary);
+    }
+
+    .pricing-price .amount {
+      font-size: 3.2rem;
+      font-weight: 800;
+      font-family: var(--font-body);
+      font-variant-numeric: tabular-nums;
+      transition: var(--transition);
+    }
+
+    .pricing-price .period {
+      font-size: 1rem;
+      color: var(--color-muted);
+      font-weight: 500;
+    }
+
+    .pricing-features {
+      list-style: none;
+      margin-bottom: 40px;
+      flex-grow: 1;
+    }
+
+    .pricing-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+      color: var(--color-text);
+    }
+
+    .pricing-features li svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--color-secondary);
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .pricing-features li.disabled {
+      color: var(--color-muted);
+      text-decoration: line-through;
+    }
+
+    .pricing-features li.disabled svg {
+      fill: var(--color-muted);
+      opacity: 0.5;
+    }
+
+    .pricing-card .btn {
+      width: 100%;
+    }
+
+    /* Info Box */
+    .info-box {
+      background-color: var(--color-bg-light);
+      border-left: 4px solid var(--color-secondary);
+      padding: 24px 32px;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      max-width: 900px;
+      margin: 0 auto;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .info-box-icon {
+      font-size: 1.5rem;
+      line-height: 1;
+      color: var(--color-secondary);
+    }
+
+    .info-box-content p {
+      font-size: 0.95rem;
+      color: var(--color-primary);
+      font-weight: 500;
+    }
+
+    /* CONFIGURATOR SECTION */
+    .configurator-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .config-controls {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .config-group {
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 32px;
+    }
+
+    .config-group:last-child {
+      margin-bottom: 0;
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .config-group h3 {
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .config-group-desc {
+      font-size: 0.9rem;
+      color: var(--color-muted);
+      margin-bottom: 20px;
+    }
+
+    /* Formules Base Radios */
+    .formula-options {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .formula-card {
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .formula-card input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .formula-card.selected {
+      border-color: var(--color-secondary);
+      background-color: var(--color-bg-teal);
+    }
+
+    .formula-card .name {
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 4px;
+    }
+
+    .formula-card .price {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--color-secondary);
+    }
+
+    /* Plates Grid (Axe 1) */
+    .plate-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 12px;
+    }
+
+    .plate-card {
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 12px;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .plate-card input {
+      position: absolute;
+      opacity: 0;
+    }
+
+    .plate-card.selected {
+      border-color: var(--color-secondary);
+      background-color: var(--color-bg-teal);
+    }
+
+    .plate-card.disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      border-color: var(--color-border);
+      background-color: #F1F5F9;
+    }
+
+    .plate-texture {
+      width: 50px;
+      height: 30px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .plate-card .name {
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .plate-card .extra {
+      font-size: 0.8rem;
+      color: var(--color-secondary);
+      font-weight: 700;
+    }
+
+    /* Color Swatches (Axe 2) */
+    .swatch-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .swatch {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .swatch input {
+      position: absolute;
+      opacity: 0;
+    }
+
+    .swatch-color {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid var(--color-border);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .swatch-color::after {
+      content: '✓';
+      color: var(--color-white);
+      font-size: 0.85rem;
+      font-weight: bold;
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .swatch input:checked + .swatch-color {
+      border-color: var(--color-secondary);
+      transform: scale(1.1);
+    }
+
+    .swatch input:checked + .swatch-color::after {
+      opacity: 1;
+    }
+
+    /* Make checkmark dark on white color */
+    .swatch input[value="frame_white"]:checked + .swatch-color::after {
+      color: #333333;
+    }
+    .swatch input[value="frame_silver"]:checked + .swatch-color::after {
+      color: #333333;
+    }
+    .swatch input[value="frame_champagne"]:checked + .swatch-color::after {
+      color: #333333;
+    }
+
+    .swatch-tooltip {
+      position: absolute;
+      bottom: -32px;
+      left: 50%;
+      transform: translateX(-50%) translateY(5px);
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      z-index: 10;
+    }
+
+    .swatch:hover .swatch-tooltip {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* Accessories (Axe 3) */
+    .accessory-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .acc-item {
+      display: flex;
+      align-items: center;
+      padding: 12px 16px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: var(--transition);
+      background-color: var(--color-white);
+      position: relative;
+    }
+
+    .acc-item:hover {
+      border-color: var(--color-secondary);
+      background-color: var(--color-bg);
+    }
+
+    .acc-item input {
+      margin-right: 12px;
+      accent-color: var(--color-secondary);
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+
+    .acc-item.checked {
+      border-color: var(--color-secondary);
+      background-color: var(--color-bg-teal);
+    }
+
+    .acc-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .acc-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .acc-price {
+      font-size: 0.8rem;
+      color: var(--color-secondary);
+      font-weight: 700;
+    }
+
+    /* Duration Selector */
+    .duration-selector {
+      display: flex;
+      gap: 10px;
+    }
+
+    .duration-option {
+      flex: 1;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .duration-option input {
+      position: absolute;
+      opacity: 0;
+    }
+
+    .duration-box {
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 12px;
+      text-align: center;
+      font-weight: 600;
+      transition: var(--transition);
+      background-color: var(--color-white);
+    }
+
+    .duration-option input:checked + .duration-box {
+      border-color: var(--color-secondary);
+      background-color: var(--color-bg-teal);
+      color: var(--color-primary);
+    }
+
+    .duration-box .discount {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--color-secondary);
+      font-weight: 700;
+      margin-top: 4px;
+    }
+
+    /* WARNING / BADGES */
+    .warning-badge {
+      display: none;
+      align-items: center;
+      gap: 10px;
+      background-color: #FEF3C7;
+      border-left: 4px solid var(--color-warning);
+      padding: 12px 16px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin-top: 16px;
+      font-size: 0.85rem;
+      color: #92400E;
+      font-weight: 500;
+      animation: fadeIn 0.3s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* CONFIG PREVIEW COLUMN */
+    .config-preview-container {
+      position: sticky;
+      top: 100px;
+    }
+
+    .preview-card {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+
+    .preview-visual-box {
+      background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%);
+      padding: 24px;
+      position: relative;
+      border-bottom: 1px solid var(--color-border);
+      height: 350px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .preview-visual-box svg {
+      width: 100%;
+      height: 100%;
+      max-height: 300px;
+    }
+
+    /* Heights and dynamic movements in SVG */
+    #desk-top-assembly, .leg-top {
+      transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .leg-mid {
+      transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    /* Toggle height buttons */
+    .height-controls {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      display: flex;
+      gap: 8px;
+      z-index: 5;
+    }
+
+    .height-btn {
+      background-color: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--color-border);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .height-btn.active {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      border-color: var(--color-primary);
+    }
+
+    /* Price tag */
+    .preview-price-box {
+      padding: 32px;
+    }
+
+    .price-display {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+      margin-bottom: 8px;
+    }
+
+    .price-display .price-num {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--color-primary);
+      font-family: var(--font-body);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .price-display .price-period {
+      font-size: 1.1rem;
+      color: var(--color-muted);
+      font-weight: 500;
+    }
+
+    .price-details {
+      font-size: 0.9rem;
+      color: var(--color-muted);
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+
+    .price-total-lease {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-secondary);
+      background-color: var(--color-bg-teal);
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      margin-bottom: 24px;
+    }
+
+    .preview-price-box .btn {
+      width: 100%;
+    }
+
+    /* TESTIMONIALS SECTION */
+    .testimonials {
+      background-color: var(--color-white);
+      border-top: 1px solid var(--color-border);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .testimonial-card {
+      background-color: var(--color-bg);
+      padding: 36px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+      position: relative;
+    }
+
+    .testimonial-rating {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 16px;
+    }
+
+    .testimonial-rating svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--color-warning);
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      color: var(--color-text);
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .testimonial-author-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .testimonial-author-info h4 {
+      font-size: 1rem;
+      font-family: var(--font-body);
+      font-weight: 700;
+    }
+
+    .testimonial-author-info p {
+      font-size: 0.8rem;
+      color: var(--color-muted);
+    }
+
+    /* FAQ SECTION (Accordions) */
+    .faq {
+      background-color: #F8FAFC;
+    }
+
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      margin-bottom: 16px;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .faq-question {
+      padding: 20px 24px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .faq-question svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--color-primary);
+      transition: var(--transition);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+      background-color: #FAFBFD;
+    }
+
+    .faq-answer-inner {
+      padding: 0 24px 24px 24px;
+      font-size: 0.95rem;
+      color: var(--color-muted);
+    }
+
+    .faq-item.active {
+      border-color: var(--color-secondary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .faq-item.active .faq-question svg {
+      transform: rotate(180deg);
+      fill: var(--color-secondary);
+    }
+
+    /* CONTACT / CTA FORM SECTION */
+    .contact {
+      background-color: var(--color-white);
+      position: relative;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .contact-form-container {
+      background-color: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .contact-form-container h3 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .contact-form-container .subtitle {
+      font-size: 0.95rem;
+      color: var(--color-muted);
+      margin-bottom: 30px;
+    }
+
+    /* Form Fields */
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group.row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--color-text);
+      background-color: var(--color-white);
+      transition: var(--transition);
+      outline: none;
+    }
+
+    .form-input:focus {
+      border-color: var(--color-secondary);
+      box-shadow: 0 0 0 3px rgba(13, 138, 122, 0.1);
+    }
+
+    .form-input.error {
+      border-color: var(--color-error);
+      background-color: #FEF2F2;
+    }
+
+    .form-error-msg {
+      font-size: 0.8rem;
+      color: var(--color-error);
+      margin-top: 4px;
+      display: none;
+    }
+
+    .textarea-container {
+      position: relative;
+    }
+
+    .char-counter {
+      position: absolute;
+      bottom: 10px;
+      right: 12px;
+      font-size: 0.75rem;
+      color: var(--color-muted);
+    }
+
+    /* Checkbox RGPD */
+    .checkbox-group {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-top: 24px;
+      cursor: pointer;
+    }
+
+    .checkbox-group input {
+      margin-top: 4px;
+      width: 16px;
+      height: 16px;
+      accent-color: var(--color-secondary);
+      cursor: pointer;
+    }
+
+    .checkbox-group label {
+      font-size: 0.85rem;
+      color: var(--color-muted);
+      cursor: pointer;
+    }
+
+    .checkbox-group.error label {
+      color: var(--color-error);
+    }
+
+    /* Contact Summary Box */
+    .contact-summary {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      position: sticky;
+      top: 100px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .contact-summary h3 {
+      color: var(--color-white);
+      font-size: 2rem;
+      margin-bottom: 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 16px;
+    }
+
+    .summary-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      font-size: 0.95rem;
+    }
+
+    .summary-item .label {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .summary-item .val {
+      font-weight: 600;
+      text-align: right;
+    }
+
+    .summary-divider {
+      height: 1px;
+      background-color: rgba(255,255,255,0.1);
+      margin: 24px 0;
+    }
+
+    .summary-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .summary-total .label {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .summary-total .val-price {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #A8D5CC;
+    }
+
+    /* Success / Loading States */
+    .form-loading {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 20px;
+    }
+
+    .spinner {
+      width: 24px;
+      height: 24px;
+      border: 3px solid rgba(13, 138, 122, 0.2);
+      border-top-color: var(--color-secondary);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .success-panel {
+      display: none;
+      text-align: center;
+      padding: 48px 32px;
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      animation: scaleUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    @keyframes scaleUp {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .success-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: #DCFCE7;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .success-icon svg {
+      width: 40px;
+      height: 40px;
+      fill: var(--color-success);
+    }
+
+    .success-panel h3 {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+    }
+
+    .success-panel p {
+      color: var(--color-muted);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* BACK TO TOP BUTTON */
+    #back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-md);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: var(--transition);
+      z-index: 999;
+    }
+
+    #back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    #back-to-top:hover {
+      background-color: var(--color-secondary);
+      transform: scale(1.05);
+    }
+
+    #back-to-top svg {
+      width: 24px;
+      height: 24px;
+      fill: var(--color-white);
+    }
+
+    /* TOAST SYSTEM */
+    #toast-container {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .toast {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      padding: 14px 20px;
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-md);
+      font-size: 0.9rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transform: translateX(-50px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border-left: 4px solid var(--color-secondary);
+    }
+
+    .toast.show {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #0F172A;
+      color: #94A3B8;
+      padding: 80px 0 40px 0;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .footer-brand h4 {
+      color: var(--color-white);
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+    }
+
+    .footer-brand p {
+      color: #94A3B8;
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+      max-width: 280px;
+    }
+
+    .footer-links h5 {
+      color: var(--color-white);
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+      font-family: var(--font-body);
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--color-secondary);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding-top: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 16px;
+    }
+
+    .social-links a {
+      width: 36px;
+      height: 36px;
+      background-color: rgba(255,255,255,0.05);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      background-color: var(--color-secondary);
+      color: var(--color-white);
+      transform: translateY(-2px);
+    }
+
+    .social-links svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    /* RESPONSIVE BREAKPOINTS */
+    @media (max-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+      }
+      
+      .hero-content h1 {
+        font-size: 3rem;
+      }
+      
+      .hero-content .subtitle {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .reassurance-bar {
+        justify-items: center;
+      }
+
+      .specs-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .configurator-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .config-preview-container {
+        position: static;
+      }
+
+      .preview-card {
+        margin-top: 30px;
+      }
+
+      .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .pricing-card.popular {
+        transform: scale(1);
+      }
+      .pricing-card.popular:hover {
+        transform: translateY(-8px);
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .contact-summary {
+        position: static;
+      }
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 60px 0;
+      }
+
+      .navbar {
+        height: 70px;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--color-white);
+        flex-direction: column;
+        justify-content: center;
+        gap: 40px;
+        padding: 40px;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        z-index: 999;
+      }
+
+      .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .hero {
+        padding: 120px 0 60px 0;
+      }
+
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+      }
+
+      .accessory-list {
+        grid-template-columns: 1fr;
+      }
+
+      .formula-options {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Scroll Progress Indicator -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- FIXED NAVIGATION BAR -->
+  <nav class="navbar" id="main-nav">
+    <div class="container">
+      <a href="#hero" class="logo" aria-label="Accueil StandingDesk">
+        <svg viewBox="0 0 24 24">
+          <path d="M19 13H5v-2h14v2zM12 5L5 12h14l-7-7z"/>
+        </svg>
+        <span>StandingDesk</span>
+      </a>
+      
+      <ul class="nav-links" id="nav-menu">
+        <li><a href="#product">Produit</a></li>
+        <li><a href="#pricing">Tarifs</a></li>
+        <li><a href="#configurator">Configurer</a></li>
+        <li><a href="#testimonials">Avis</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      
+      <div class="nav-cta">
+        <a href="#contact" class="btn btn-primary btn-focus-visible">Demander un devis</a>
+      </div>
+
+      <button class="menu-toggle" id="mobile-menu-btn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="hero" id="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <h1>Travaillez mieux.<br>Payez moins.<br><span>Debout.</span></h1>
+          <p class="subtitle">Le bureau debout premium en leasing dès 29€/mois — sans engagement, livré et installé à domicile ou en entreprise.</p>
+          
+          <div class="hero-actions">
+            <a href="#configurator" class="btn btn-primary btn-focus-visible">Configurer mon bureau</a>
+            <a href="#pricing" class="btn btn-secondary btn-focus-visible">Voir les offres</a>
+          </div>
+
+          <div class="reassurance-bar">
+            <div class="reassurance-item">
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Livraison & installation incluses</span>
+            </div>
+            <div class="reassurance-item">
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Sans engagement — résiliable</span>
+            </div>
+            <div class="reassurance-item">
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Garantie totale 5 ans moteur</span>
+            </div>
+            <div class="reassurance-item">
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>+2 000 entreprises clientes</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <!-- Stylized Isometric SVG of Standing Desk -->
+          <svg viewBox="0 0 500 400" aria-label="Illustration d'un bureau debout ergonomique">
+            <!-- Background Halo -->
+            <circle cx="250" cy="220" r="160" fill="url(#hero-gradient)" opacity="0.6" />
+            
+            <!-- Floor Shadow -->
+            <ellipse cx="250" cy="340" rx="140" ry="25" fill="#E2E8F0" opacity="0.8" />
+            
+            <!-- Isometric Desk Base/Feet -->
+            <path d="M120,335 L170,320 L190,325 L140,340 Z" fill="#4A5568" />
+            <path d="M310,335 L360,320 L380,325 L330,340 Z" fill="#4A5568" />
+            
+            <!-- Inner leg segments -->
+            <rect x="150" y="240" width="16" height="85" fill="#718096" />
+            <rect x="340" y="240" width="16" height="85" fill="#718096" />
+            
+            <!-- Outer leg segments (telescopic columns) -->
+            <rect x="146" y="170" width="24" height="80" fill="#A0AEC0" />
+            <rect x="336" y="170" width="24" height="80" fill="#A0AEC0" />
+            
+            <!-- Desk Frame/Supports -->
+            <path d="M130,170 L370,170 L370,178 L130,178 Z" fill="#2D3748" />
+
+            <!-- Wooden Desktop (Perspective 3D Block) -->
+            <!-- Under part/thickness -->
+            <path d="M90,165 L410,165 L410,170 L90,170 Z" fill="#8C5835" />
+            <path d="M410,140 L410,170 L380,185 L380,155 Z" fill="#704424" />
+            <!-- Top surface -->
+            <path d="M90,140 L380,140 L410,155 L120,155 Z" fill="#C49A6C" />
+            
+            <!-- Monitor on top -->
+            <path d="M220,135 L280,135 L280,138 L220,138 Z" fill="#2D3748" /> <!-- Stand base -->
+            <rect x="246" y="105" width="8" height="30" fill="#4A5568" /> <!-- Stand arm -->
+            <rect x="180" y="55" width="140" height="80" rx="4" fill="#1A202C" /> <!-- Screen -->
+            <rect x="185" y="60" width="130" height="70" fill="#2B6CB0" opacity="0.8" /> <!-- Inner screen glow -->
+            
+            <!-- Plant on desk -->
+            <ellipse cx="120" cy="130" rx="10" ry="12" fill="#E2E8F0" />
+            <path d="M110,122 C115,110 112,105 116,95 C122,105 120,110 125,122" fill="#48BB78" />
+            <path d="M120,125 C125,115 122,110 128,100 C132,110 128,115 122,125" fill="#38A169" />
+            
+            <!-- SVGs definitions -->
+            <defs>
+              <radialGradient id="hero-gradient" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#0D8A7A" stop-opacity="0.15" />
+                <stop offset="100%" stop-color="#0D8A7A" stop-opacity="0" />
+              </radialGradient>
+            </defs>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PRODUCT FEATURES SECTION -->
+  <section id="product" class="product-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Une ergonomie sans compromis</h2>
+        <p>Découvrez pourquoi le bureau debout change radicalement votre quotidien professionnel.</p>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon-wrapper">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+            </svg>
+          </div>
+          <h3>Santé & Posture</h3>
+          <p>Réduisez de 40% les douleurs lombaires et la fatigue musculaire en alternant les positions assis et debout au fil de la journée.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon-wrapper">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+            </svg>
+          </div>
+          <h3>Productivité accrue</h3>
+          <p>Boostez votre concentration et votre niveau d'énergie. Les études montrent une augmentation moyenne de +17% de productivité au bureau.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon-wrapper">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.25z"/>
+            </svg>
+          </div>
+          <h3>Fiscalité avantageuse</h3>
+          <p>Pour les entreprises, le leasing est 100% déductible des charges opérationnelles. Préservez votre trésorerie et équipez vos collaborateurs.</p>
+        </div>
+      </div>
+
+      <div class="specs-section" style="margin-top: 80px; padding: 40px; border-radius: var(--radius-lg); background-color: var(--color-white);">
+        <div class="specs-container">
+          <div class="specs-content">
+            <h3>Conçu pour durer,<br>pensé pour le quotidien.</h3>
+            <p>Notre bureau réunit les meilleures performances du marché. Des moteurs ultra-silencieux à la mémoire de position, découvrez nos spécifications d'usine certifiées.</p>
+            <div class="nav-cta" style="margin-top: 20px;">
+              <a href="#configurator" class="btn btn-primary btn-focus-visible">Configurer mon modèle</a>
+            </div>
+          </div>
+          <div>
+            <table class="specs-table">
+              <tbody>
+                <tr>
+                  <td>Plage de hauteur</td>
+                  <td>62 cm à 128 cm (parfait de 1m40 à 2m05)</td>
+                </tr>
+                <tr>
+                  <td>Moteur</td>
+                  <td>Double moteur électrique silencieux (&lt; 45 dB)</td>
+                </tr>
+                <tr>
+                  <td>Vitesse de montée</td>
+                  <td>38 mm/s avec démarrage/arrêt progressif</td>
+                </tr>
+                <tr>
+                  <td>Charge maximale</td>
+                  <td>120 kg (supporte facilement 3 écrans + matériel)</td>
+                </tr>
+                <tr>
+                  <td>Plateau standard</td>
+                  <td>140 × 70 cm en bois durable certifié FSC</td>
+                </tr>
+                <tr>
+                  <td>Mémoire de hauteur</td>
+                  <td>Panneau de contrôle tactile, 4 hauteurs programmables</td>
+                </tr>
+                <tr>
+                  <td>Sécurité</td>
+                  <td>Capteur anti-collision intégré automatique</td>
+                </tr>
+                <tr>
+                  <td>Garantie</td>
+                  <td>5 ans moteurs et structure, 3 ans accessoires</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEASING OFFERS / PRICING GRID -->
+  <section id="pricing" class="pricing">
+    <div class="container">
+      <div class="section-header">
+        <h2>Des formules adaptées à votre croissance</h2>
+        <p>Choisissez la formule de leasing qui correspond à vos besoins professionnels.</p>
+      </div>
+
+      <div class="pricing-toggle-container">
+        <span class="pricing-toggle-label">Durée d'engagement du leasing :</span>
+        <div class="pricing-tabs" role="tablist">
+          <button class="pricing-tab" role="tab" aria-selected="false" data-duration="12">12 mois</button>
+          <button class="pricing-tab active" role="tab" aria-selected="true" data-duration="24">24 mois <span style="color: #A8D5CC; font-weight:800;">-15%</span></button>
+          <button class="pricing-tab" role="tab" aria-selected="false" data-duration="36">36 mois <span style="color: #A8D5CC; font-weight:800;">-25%</span></button>
+          <button class="pricing-tab" role="tab" aria-selected="false" data-duration="48">48 mois <span style="color: #A8D5CC; font-weight:800;">-32%</span></button>
+        </div>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- ESSENTIEL CARD -->
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>Essentiel</h3>
+            <div class="pricing-commitment">Formule bureau fonctionnel</div>
+            <div class="pricing-price">
+              <span class="amount" id="price-card-essentiel">24.65</span>
+              <span class="period">€/mois HT</span>
+            </div>
+          </div>
+          <ul class="pricing-features">
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Plateau mélaminé résistant (120×60 cm)</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Cadre acier haute résistance (Noir / Blanc)</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Moteur simple & 2 mémoires de hauteur</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Livraison incluse sous 5 jours</span>
+            </li>
+            <li class="disabled">
+              <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              <span>Bras d'écran ergonomique inclus</span>
+            </li>
+            <li class="disabled">
+              <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              <span>Installation complète par nos techniciens</span>
+            </li>
+          </ul>
+          <button class="btn btn-secondary select-offer-btn btn-focus-visible" data-formula="Essentiel">Sélectionner cette offre</button>
+        </div>
+
+        <!-- CONFORT CARD -->
+        <div class="pricing-card popular">
+          <div class="popular-badge">Populaire</div>
+          <div class="pricing-header">
+            <h3>Confort</h3>
+            <div class="pricing-commitment">Sans engagement de durée</div>
+            <div class="pricing-price">
+              <span class="amount" id="price-card-confort">41.65</span>
+              <span class="period">€/mois HT</span>
+            </div>
+          </div>
+          <ul class="pricing-features">
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span><strong>Plateau bambou naturel ou bois massif (140×70 cm)</strong></span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Cadre aluminium premium (3 coloris au choix)</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Double moteur & 4 mémoires de hauteur</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span><strong>Bras d'écran simple ergonomique inclus</strong></span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Livraison & installation par nos techniciens (J+3)</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Support technique prioritaire 7j/7</span>
+            </li>
+          </ul>
+          <button class="btn btn-primary select-offer-btn btn-focus-visible" data-formula="Confort">Sélectionner cette offre</button>
+        </div>
+
+        <!-- PREMIUM CARD -->
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>Premium</h3>
+            <div class="pricing-commitment">La formule ultime tout-inclus</div>
+            <div class="pricing-price">
+              <span class="amount" id="price-card-premium">67.15</span>
+              <span class="period">€/mois HT</span>
+            </div>
+          </div>
+          <ul class="pricing-features">
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Plateau chêne massif premium (160×80 cm)</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Cadre aluminium renforcé (5 coloris exclusifs)</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>8 mémoires + connectivité App mobile</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span><strong>Tous les accessoires de confort inclus</strong></span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Livraison express & installation J+1</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Account Manager dédié & SAV instantané</span>
+            </li>
+          </ul>
+          <button class="btn btn-secondary select-offer-btn btn-focus-visible" data-formula="Premium">Sélectionner cette offre</button>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <div class="info-box-icon" aria-hidden="true">ℹ</div>
+        <div class="info-box-content">
+          <p>Le leasing est un contrat de location longue durée. À l'issue de votre période d'engagement, vous pouvez restituer le bureau, le racheter à sa valeur résiduelle (estimée à seulement 10% du prix d'achat initial), ou renouveler votre formule pour bénéficier du tout dernier modèle.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE CONFIGURATOR SECTION -->
+  <section id="configurator">
+    <div class="container">
+      <div class="section-header">
+        <h2>Créez le bureau qui vous ressemble</h2>
+        <p>Ajustez les dimensions, les matériaux et les accessoires. Votre prix mensuel s'actualise instantanément.</p>
+      </div>
+
+      <div class="configurator-grid">
+        
+        <!-- Controls area (Left) -->
+        <div class="config-controls">
+          
+          <!-- Base Formula Selection -->
+          <div class="config-group">
+            <h3><span>1.</span> Choisissez votre formule de base</h3>
+            <p class="config-group-desc">Cette formule définit les caractéristiques structurelles (moteurs, garantie, etc.).</p>
+            <div class="formula-options" role="radiogroup" aria-label="Sélection de la formule de base">
+              <label class="formula-card" id="formula-card-Essentiel">
+                <input type="radio" name="formula_select" value="Essentiel">
+                <span class="name">Essentiel</span>
+                <span class="price">29€/mois</span>
+              </label>
+              <label class="formula-card selected" id="formula-card-Confort">
+                <input type="radio" name="formula_select" value="Confort" checked>
+                <span class="name">Confort</span>
+                <span class="price">49€/mois</span>
+              </label>
+              <label class="formula-card" id="formula-card-Premium">
+                <input type="radio" name="formula_select" value="Premium">
+                <span class="name">Premium</span>
+                <span class="price">79€/mois</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Plank customization (Axe 1) -->
+          <div class="config-group">
+            <h3><span>2.</span> Plateau de bureau</h3>
+            <p class="config-group-desc">Sélectionnez le matériau de la planche de votre bureau.</p>
+            <div class="plate-grid" id="plank-group" role="radiogroup" aria-label="Matériau du plateau">
+              
+              <label class="plate-card selected" id="plank-card-plank_melamine">
+                <input type="radio" name="plank_select" value="plank_melamine" checked>
+                <div class="plate-texture" style="background-color: #F5F5F0;" aria-hidden="true"></div>
+                <span class="name">Mélaminé blanc</span>
+                <span class="extra">Inclus</span>
+              </label>
+
+              <label class="plate-card" id="plank-card-plank_black">
+                <input type="radio" name="plank_select" value="plank_black">
+                <div class="plate-texture" style="background-color: #1A1A1A;" aria-hidden="true"></div>
+                <span class="name">Mélaminé noir</span>
+                <span class="extra">+5 €/mois</span>
+              </label>
+
+              <label class="plate-card" id="plank-card-plank_bamboo">
+                <input type="radio" name="plank_select" value="plank_bamboo">
+                <div class="plate-texture" style="background-color: #D4A853; background-image: repeating-linear-gradient(90deg, transparent, transparent 10px, rgba(0,0,0,0.03) 10px, rgba(0,0,0,0.03) 12px);" aria-hidden="true"></div>
+                <span class="name">Bambou naturel</span>
+                <span class="extra">+8 €/mois</span>
+              </label>
+
+              <label class="plate-card" id="plank-card-plank_oak">
+                <input type="radio" name="plank_select" value="plank_oak">
+                <div class="plate-texture" style="background: linear-gradient(135deg, #A0522D, #CD853F);" aria-hidden="true"></div>
+                <span class="name">Chêne massif</span>
+                <span class="extra">+18 €/mois</span>
+              </label>
+
+              <label class="plate-card" id="plank-card-plank_walnut" title="Disponible à partir de la formule Confort">
+                <input type="radio" name="plank_select" value="plank_walnut">
+                <div class="plate-texture" style="background: linear-gradient(135deg, #5C3317, #3E2110);" aria-hidden="true"></div>
+                <span class="name">Noyer premium</span>
+                <span class="extra">+28 €/mois</span>
+              </label>
+
+            </div>
+          </div>
+
+          <!-- Frame color (Axe 2) -->
+          <div class="config-group">
+            <h3><span>3.</span> Couleur de la structure</h3>
+            <p class="config-group-desc">Choisissez le coloris des pieds et du cadre en acier/aluminium.</p>
+            <div class="swatch-container" role="radiogroup" aria-label="Couleur de la structure">
+              
+              <label class="swatch">
+                <input type="radio" name="frame_select" value="frame_white" checked>
+                <div class="swatch-color" style="background-color: #E8E8E8;" aria-label="Structure Blanc Arctique" role="img"></div>
+                <span class="swatch-tooltip">Blanc Arctique (+0€)</span>
+              </label>
+
+              <label class="swatch">
+                <input type="radio" name="frame_select" value="frame_black">
+                <div class="swatch-color" style="background-color: #1C1C1C;" aria-label="Structure Noir Mat" role="img"></div>
+                <span class="swatch-tooltip">Noir Mat (+0€)</span>
+              </label>
+
+              <label class="swatch">
+                <input type="radio" name="frame_select" value="frame_silver">
+                <div class="swatch-color" style="background-color: #B0B8C0;" aria-label="Structure Argent Brossé" role="img"></div>
+                <span class="swatch-tooltip">Argent Brossé (+5€)</span>
+              </label>
+
+              <label class="swatch">
+                <input type="radio" name="frame_select" value="frame_space_gray">
+                <div class="swatch-color" style="background-color: #6B7280;" aria-label="Structure Gris Sidéral" role="img"></div>
+                <span class="swatch-tooltip">Gris Sidéral (+5€)</span>
+              </label>
+
+              <label class="swatch">
+                <input type="radio" name="frame_select" value="frame_champagne">
+                <div class="swatch-color" style="background-color: #C8A96E;" aria-label="Structure Champagne" role="img"></div>
+                <span class="swatch-tooltip">Champagne (+10€)</span>
+              </label>
+
+              <label class="swatch">
+                <input type="radio" name="frame_select" value="frame_forest">
+                <div class="swatch-color" style="background-color: #2D6A4F;" aria-label="Structure Vert Forêt" role="img"></div>
+                <span class="swatch-tooltip">Vert Forêt (+8€)</span>
+              </label>
+
+            </div>
+          </div>
+
+          <!-- Accessories (Axe 3) -->
+          <div class="config-group">
+            <h3><span>4.</span> Accessoires et options ergonomiques</h3>
+            <p class="config-group-desc">Ajoutez des accessoires à votre formule de leasing pour parfaire votre espace.</p>
+            <div class="accessory-list">
+              
+              <label class="acc-item" id="acc-item-acc_monitor_arm">
+                <input type="checkbox" name="accessory_select" value="acc_monitor_arm">
+                <div class="acc-info">
+                  <span class="acc-name">Bras d'écran simple</span>
+                  <span class="acc-price">+6 €/mois</span>
+                </div>
+              </label>
+
+              <label class="acc-item" id="acc-item-acc_monitor_arm_dual">
+                <input type="checkbox" name="accessory_select" value="acc_monitor_arm_dual">
+                <div class="acc-info">
+                  <span class="acc-name">Bras double écran</span>
+                  <span class="acc-price">+10 €/mois</span>
+                </div>
+              </label>
+
+              <label class="acc-item" id="acc-item-acc_cable_mgmt">
+                <input type="checkbox" name="accessory_select" value="acc_cable_mgmt">
+                <div class="acc-info">
+                  <span class="acc-name">Gouttière passe-câbles</span>
+                  <span class="acc-price">+3 €/mois</span>
+                </div>
+              </label>
+
+              <label class="acc-item" id="acc-item-acc_drawer">
+                <input type="checkbox" name="accessory_select" value="acc_drawer">
+                <div class="acc-info">
+                  <span class="acc-name">Tiroir sous-plateau</span>
+                  <span class="acc-price">+5 €/mois</span>
+                </div>
+              </label>
+
+              <label class="acc-item" id="acc-item-acc_headset_hanger">
+                <input type="checkbox" name="accessory_select" value="acc_headset_hanger">
+                <div class="acc-info">
+                  <span class="acc-name">Accroche casque</span>
+                  <span class="acc-price">+2 €/mois</span>
+                </div>
+              </label>
+
+              <label class="acc-item" id="acc-item-acc_anti_fatigue_mat">
+                <input type="checkbox" name="accessory_select" value="acc_anti_fatigue_mat">
+                <div class="acc-info">
+                  <span class="acc-name">Tapis anti-fatigue</span>
+                  <span class="acc-price">+4 €/mois</span>
+                </div>
+              </label>
+
+              <label class="acc-item" id="acc-item-acc_webcam">
+                <input type="checkbox" name="accessory_select" value="acc_webcam">
+                <div class="acc-info">
+                  <span class="acc-name">Support webcam</span>
+                  <span class="acc-price">+3 €/mois</span>
+                </div>
+              </label>
+
+              <label class="acc-item" id="acc-item-acc_led_strip">
+                <input type="checkbox" name="accessory_select" value="acc_led_strip">
+                <div class="acc-info">
+                  <span class="acc-name">Bande LED rétroéclairage</span>
+                  <span class="acc-price">+4 €/mois</span>
+                </div>
+              </label>
+
+            </div>
+
+            <!-- Warn badge for Essentiel + premium options -->
+            <div class="warning-badge" id="essentiel-options-warning" role="alert">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+              </svg>
+              <span>Certaines options requièrent la formule Confort ou plus.</span>
+            </div>
+          </div>
+
+          <!-- Duration selection (in configurator) -->
+          <div class="config-group">
+            <h3><span>5.</span> Durée du contrat</h3>
+            <p class="config-group-desc">Une durée d'engagement supérieure diminue votre redevance mensuelle.</p>
+            <div class="duration-selector" role="radiogroup" aria-label="Durée du leasing du configurateur">
+              
+              <label class="duration-option">
+                <input type="radio" name="config_duration_select" value="12">
+                <div class="duration-box">
+                  <span>12 mois</span>
+                  <span class="discount">Prix de base</span>
+                </div>
+              </label>
+
+              <label class="duration-option">
+                <input type="radio" name="config_duration_select" value="24" checked>
+                <div class="duration-box">
+                  <span>24 mois</span>
+                  <span class="discount">-15% inclus</span>
+                </div>
+              </label>
+
+              <label class="duration-option">
+                <input type="radio" name="config_duration_select" value="36">
+                <div class="duration-box">
+                  <span>36 mois</span>
+                  <span class="discount">-25% inclus</span>
+                </div>
+              </label>
+
+              <label class="duration-option">
+                <input type="radio" name="config_duration_select" value="48">
+                <div class="duration-box">
+                  <span>48 mois</span>
+                  <span class="discount">-32% inclus</span>
+                </div>
+              </label>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Preview & Live Pricing panel (Right, Sticky) -->
+        <div class="config-preview-container">
+          <div class="preview-card">
+            
+            <div class="preview-visual-box">
+              
+              <!-- HEIGHT CONTROL BUTTONS -->
+              <div class="height-controls">
+                <button type="button" class="height-btn active" id="height-btn-sitting">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M16 10H8c-1.1 0-2 .9-2 2v8h2v-8h8v8h2v-8c0-1.1-.9-2-2-2zM12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"/></svg>
+                  <span>Assis</span>
+                </button>
+                <button type="button" class="height-btn" id="height-btn-standing">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm9 7h-6v13h-2v-6h-2v6H9V9H3V7h18v2z"/></svg>
+                  <span>Debout</span>
+                </button>
+              </div>
+
+              <!-- DYNAMIC VECTOR PREVIEW SVG -->
+              <svg viewBox="0 0 500 400" id="desk-svg-preview">
+                <defs>
+                  <!-- Background Glow behind Desk -->
+                  <radialGradient id="preview-glow" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#0D8A7A" stop-opacity="0.1" />
+                    <stop offset="100%" stop-color="#0D8A7A" stop-opacity="0" />
+                  </radialGradient>
+                  
+                  <!-- LED Light Strip Glow Filter -->
+                  <filter id="led-glow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="15" result="blur" />
+                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                  </filter>
+                </defs>
+
+                <!-- Soft LED backlight (renders if led strip accessory checked) -->
+                <rect x="80" y="50" width="340" height="240" rx="100" fill="#0D8A7A" opacity="0" id="svg-led-backlight" filter="url(#led-glow)" />
+
+                <!-- Floor Shadow -->
+                <ellipse cx="250" cy="340" rx="150" ry="20" fill="#E2E8F0" />
+
+                <!-- Anti fatigue mat (renders if mat accessory checked) -->
+                <ellipse cx="250" cy="336" rx="120" ry="12" fill="#475569" opacity="0" id="svg-anti-fatigue-mat" />
+
+                <!-- Desk Base Feet (Fixed on ground) -->
+                <!-- Left Foot -->
+                <path d="M110,335 L170,320 L190,325 L130,340 Z" fill="#2D3748" />
+                <!-- Right Foot -->
+                <path d="M310,335 L370,320 L390,325 L330,340 Z" fill="#2D3748" />
+
+                <!-- LEG TELESCOPIC COLUMNS -->
+                <!-- Left Leg Segment 1 (Base - Fixed) -->
+                <rect x="146" y="270" width="24" height="60" fill="#4A5568" id="svg-leg-bottom-left" />
+                <!-- Right Leg Segment 1 (Base - Fixed) -->
+                <rect x="326" y="270" width="24" height="60" fill="#4A5568" id="svg-leg-bottom-right" />
+
+                <!-- Left Leg Segment 2 (Middle - Moves 50%) -->
+                <rect x="148" y="220" width="20" height="60" fill="#718096" id="svg-leg-mid-left" class="leg-mid" />
+                <!-- Right Leg Segment 2 (Middle - Moves 50%) -->
+                <rect x="328" y="220" width="20" height="60" fill="#718096" id="svg-leg-mid-right" class="leg-mid" />
+
+                <!-- Left Leg Segment 3 (Top - Moves 100%) -->
+                <rect x="150" y="170" width="16" height="60" fill="#A0AEC0" id="svg-leg-top-left" class="leg-top" />
+                <!-- Right Leg Segment 3 (Top - Moves 100%) -->
+                <rect x="330" y="170" width="16" height="60" fill="#A0AEC0" id="svg-leg-top-right" class="leg-top" />
+
+                <!-- MOVEABLE ASSEMBLY (Tabletop + Items on top) -->
+                <g id="desk-top-assembly">
+                  
+                  <!-- Cable management tray under table (accessory option) -->
+                  <path d="M170,172 L330,172 L330,185 L170,185 Z" fill="#718096" opacity="0" id="svg-cable-mgmt" />
+                  
+                  <!-- Drawer under table right side (accessory option) -->
+                  <rect x="290" y="172" width="45" height="18" rx="2" fill="#334155" opacity="0" id="svg-drawer" />
+
+                  <!-- Headset hanger hook right side (accessory option) -->
+                  <g id="svg-headset-hanger" opacity="0">
+                    <path d="M375,172 L375,190 L370,190" fill="none" stroke="#475569" stroke-width="3" />
+                    <!-- Headset illustration -->
+                    <circle cx="370" cy="202" r="8" fill="none" stroke="#1E293B" stroke-width="3" />
+                    <path d="M362,202 C362,192 378,192 378,202" fill="none" stroke="#1E293B" stroke-width="2" />
+                  </g>
+
+                  <!-- Wooden tabletop block (gives 3D thickness) -->
+                  <!-- Under edge/thickness -->
+                  <path d="M90,166 L410,166 L410,172 L90,172 Z" fill="#8C5835" id="svg-tabletop-thickness" />
+                  <path d="M410,138 L410,172 L380,187 L380,153 Z" fill="#704424" id="svg-tabletop-side-thickness" />
+                  <!-- Top flat surface -->
+                  <path d="M90,138 L380,138 L410,153 L120,153 Z" fill="#C49A6C" id="svg-tabletop-surface" />
+
+                  <!-- Standard Monitor Mount / Stand -->
+                  <g id="svg-monitor-mount">
+                    <path d="M235,135 L265,135 L265,138 L235,138 Z" fill="#1E293B" />
+                    <rect x="247" y="100" width="6" height="36" fill="#334155" />
+                  </g>
+
+                  <!-- Standard Monitor (Screens) -->
+                  <g id="svg-single-screen">
+                    <rect x="160" y="45" width="180" height="100" rx="6" fill="#0F172A" />
+                    <!-- Bright background wallpaper -->
+                    <rect x="165" y="50" width="170" height="88" rx="2" fill="url(#desktop-wallpaper)" />
+                  </g>
+
+                  <!-- SINGLE SCREEN BRACKET (Alternative to Dual monitor arm accessory) -->
+                  <g id="svg-monitor-arm-single" opacity="0">
+                    <!-- Articulated metal arm attached to back left -->
+                    <path d="M180,140 L160,110 L200,90" fill="none" stroke="#64748B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+                  </g>
+
+                  <!-- DUAL MONITOR ARMS (Accessory Option) -->
+                  <g id="svg-dual-screen" opacity="0">
+                    <!-- Left arm & screen -->
+                    <path d="M230,135 L160,110 L150,90" fill="none" stroke="#64748B" stroke-width="5" stroke-linecap="round" />
+                    <rect x="70" y="35" width="150" height="85" rx="5" fill="#0F172A" transform="rotate(-5, 145, 77)" />
+                    <rect x="75" y="40" width="140" height="75" fill="url(#desktop-wallpaper)" transform="rotate(-5, 145, 77)" />
+                    
+                    <!-- Right arm & screen -->
+                    <path d="M270,135 L340,110 L350,90" fill="none" stroke="#64748B" stroke-width="5" stroke-linecap="round" />
+                    <rect x="280" y="35" width="150" height="85" rx="5" fill="#0F172A" transform="rotate(5, 355, 77)" />
+                    <rect x="285" y="40" width="140" height="75" fill="url(#desktop-wallpaper)" transform="rotate(5, 355, 77)" />
+                  </g>
+
+                  <!-- Webcam accessory (Accessory option) -->
+                  <g id="svg-webcam" opacity="0">
+                    <ellipse cx="250" cy="42" rx="7" ry="5" fill="#1E293B" />
+                    <circle cx="250" cy="42" r="2" fill="#0D8A7A" />
+                  </g>
+
+                </g>
+
+                <!-- Wallpaper gradient definitions -->
+                <defs>
+                  <linearGradient id="desktop-wallpaper" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#1E3A8A" />
+                    <stop offset="50%" stop-color="#0D8A7A" />
+                    <stop offset="100%" stop-color="#701A75" />
+                  </linearGradient>
+                </defs>
+              </svg>
+
+            </div>
+
+            <!-- Real-time price calculation breakdown -->
+            <div class="preview-price-box">
+              <div class="price-display" aria-live="polite">
+                <span class="price-num" id="calc-price-num">41.65</span>
+                <span class="price-period">€/mois HT</span>
+              </div>
+              
+              <div class="price-details" id="calc-price-description">
+                Formule Confort + Plateau Mélaminé blanc + Cadre Blanc arctique.
+              </div>
+
+              <div class="price-total-lease" id="calc-price-total-lease">
+                Soit 999.60 € sur 24 mois.
+              </div>
+
+              <a href="#contact" class="btn btn-primary btn-focus-visible" id="cta-config-submit">Commander cette configuration</a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS SECTION -->
+  <section id="testimonials" class="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <h2>Ils travaillent debout et en témoignent</h2>
+        <p>Plus de 2 000 salariés et indépendants ont franchi le pas grâce à notre leasing.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-rating">
+            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
+          <p class="testimonial-text">"Mes douleurs de dos chroniques ont disparu en trois semaines. Le fait d'alterner assis/debout toutes les 2 heures m'a redonné une énergie incroyable. Le service de leasing est parfait pour les indépendants."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-author-avatar">AM</div>
+            <div class="testimonial-author-info">
+              <h4>Alexandre Muller</h4>
+              <p>Développeur Freelance, Lyon</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-rating">
+            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
+          <p class="testimonial-text">"Nous avons équipé nos 45 collaborateurs avec la formule Confort. Fiscalement c'est idéal car cela passe en charges. L'installation s'est faite en une demi-journée par des professionnels."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-author-avatar">SL</div>
+            <div class="testimonial-author-info">
+              <h4>Sophie Laurent</h4>
+              <p>DRH chez TechGrow, Paris</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-rating">
+            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
+          <p class="testimonial-text">"La qualité du plateau en chêne massif est remarquable. Le configurateur reflète exactement le bureau livré. Très rassurant de savoir qu'en cas de panne, tout est couvert pendant 5 ans."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-author-avatar">MB</div>
+            <div class="testimonial-author-info">
+              <h4>Marc Bonnel</h4>
+              <p>Architecte d'Intérieur, Nantes</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACCORDION FAQ SECTION -->
+  <section id="faq" class="faq">
+    <div class="container">
+      <div class="section-header">
+        <h2>Questions fréquentes</h2>
+        <p>Tout ce que vous devez savoir sur notre offre de leasing de bureaux debout.</p>
+      </div>
+
+      <div class="faq-container">
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Quelles sont les modalités de livraison et d'installation ?</span>
+            <svg viewBox="0 0 24 24"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Pour les formules Confort et Premium, la livraison et l'installation sont entièrement incluses dans le prix. Nos techniciens apportent le bureau, le montent dans la pièce de votre choix, effectuent les branchements et règlent les paramètres initiaux. Pour la formule Essentiel, le bureau est livré au pas de porte avec une notice claire de montage (compter 30 minutes).
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Puis-je résilier mon abonnement à tout moment ?</span>
+            <svg viewBox="0 0 24 24"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              La formule <strong>Confort</strong> est proposée sans aucun engagement de durée. Vous pouvez y mettre fin à tout moment avec un préavis d'un mois. Pour les formules Essentiel et Premium, le tarif mensuel ultra-compétitif est soumis à une période minimale d'engagement (12 ou 24 mois), renouvelable.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Que se passe-t-il à la fin du contrat de leasing ?</span>
+            <svg viewBox="0 0 24 24"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Trois options s'offrent à vous :
+              1. **Restitution** : Nous venons récupérer le bureau gratuitement.
+              2. **Rachat** : Vous en devenez propriétaire définitif en réglant la valeur résiduelle contractuelle (10% de la valeur d'achat).
+              3. **Renouvellement** : Vous repartez sur un nouveau contrat avec un modèle de bureau neuf de dernière génération.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Qu'est-ce qui est couvert par la garantie de 5 ans ?</span>
+            <svg viewBox="0 0 24 24"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Pendant toute la durée de votre leasing, les moteurs électriques, les boîtiers électroniques de commande, ainsi que l'ensemble de la structure métallique sont couverts. En cas de dysfonctionnement mécanique ou électrique, un technicien se déplace pour réparer ou remplacer la pièce défectueuse sans aucun frais pour vous.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Le leasing est-il disponible pour les particuliers et le télétravail ?</span>
+            <svg viewBox="0 0 24 24"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Oui, tout à fait ! Nous proposons des contrats de leasing pour les professionnels (personnes morales) ainsi que pour les indépendants et les particuliers en télétravail. Si votre entreprise prend en charge votre équipement à domicile, nous pouvons facturer directement votre employeur.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM / Lead generation CTA SECTION -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="contact-grid">
+        
+        <!-- Form Container (Left) -->
+        <div class="contact-form-container">
+          <h3>Prêt à travailler debout ?</h3>
+          <p class="subtitle">Demandez votre devis personnalisé en 2 minutes. Aucun paiement requis à ce stade.</p>
+          
+          <!-- Success Message Panel (hidden initially) -->
+          <div class="success-panel" id="devis-success-panel">
+            <div class="success-icon">
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            </div>
+            <h3>Votre demande est validée !</h3>
+            <p>Merci pour votre intérêt. Notre équipe de conseillers étudie votre configuration et vous contactera par email sous 24h ouvrées avec votre devis finalisé.</p>
+          </div>
+
+          <!-- Loading Panel (hidden initially) -->
+          <div class="form-loading" id="devis-loading-panel">
+            <div class="spinner"></div>
+            <span>Envoi de votre configuration en cours...</span>
+          </div>
+
+          <!-- Real HTML Form -->
+          <form id="devis-form" novalidate>
+            <!-- Hidden inputs to submit configuration state -->
+            <input type="hidden" name="hidden_formula" id="form-hidden-formula">
+            <input type="hidden" name="hidden_plank" id="form-hidden-plank">
+            <input type="hidden" name="hidden_frame" id="form-hidden-frame">
+            <input type="hidden" name="hidden_accessories" id="form-hidden-accessories">
+            <input type="hidden" name="hidden_duration" id="form-hidden-duration">
+            <input type="hidden" name="hidden_monthly_price" id="form-hidden-monthly-price">
+
+            <div class="form-group row">
+              <div>
+                <label for="first-name" class="form-label">Prénom & Nom *</label>
+                <input type="text" id="first-name" name="fullname" class="form-input" placeholder="ex: Jean Dupont" required>
+                <span class="form-error-msg" id="error-fullname">Ce champ est requis.</span>
+              </div>
+              <div>
+                <label for="company" class="form-label">Entreprise (Optionnel)</label>
+                <input type="text" id="company" name="company" class="form-input" placeholder="ex: Tech SAS">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div>
+                <label for="email" class="form-label">Email professionnel *</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="ex: jean@entreprise.com" required>
+                <span class="form-error-msg" id="error-email">Veuillez entrer une adresse email valide.</span>
+              </div>
+              <div>
+                <label for="phone" class="form-label">Téléphone (Optionnel)</label>
+                <input type="tel" id="phone" name="phone" class="form-input" placeholder="ex: 06 12 34 56 78">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="quantity" class="form-label">Nombre de bureaux souhaités *</label>
+              <input type="number" id="quantity" name="quantity" class="form-input" value="1" min="1" max="500" required>
+              <span class="form-error-msg" id="error-quantity">La quantité minimum est de 1.</span>
+              <span class="form-error-msg" id="error-quantity-max" style="color: var(--color-warning); display:none;">Pour plus de 500 unités, contactez-nous directement par téléphone au 01 84 60 82 20.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="comments" class="form-label">Message ou commentaire</label>
+              <div class="textarea-container">
+                <textarea id="comments" name="comments" class="form-input" rows="4" maxlength="500" placeholder="Précisez vos besoins de livraison, vos contraintes d'espace, etc."></textarea>
+                <span class="char-counter" id="comments-char-count">0 / 500</span>
+              </div>
+            </div>
+
+            <div class="checkbox-group" id="rgpd-container">
+              <input type="checkbox" id="rgpd" name="rgpd" required>
+              <label for="rgpd">J'accepte la politique de confidentialité. Mes données sont uniquement traitées pour l'établissement de mon devis. *</label>
+            </div>
+            <span class="form-error-msg" id="error-rgpd" style="margin-left: 26px;">Veuillez accepter la politique de confidentialité pour continuer.</span>
+
+            <div style="margin-top: 32px;">
+              <button type="submit" class="btn btn-primary btn-focus-visible" style="width: 100%; font-size: 1.1rem; height: 55px;" id="submit-devis-btn">Envoyer ma demande de devis</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Summary panel of configured desk (Right) -->
+        <div class="contact-summary">
+          <h3>Votre configuration</h3>
+          
+          <div class="summary-item">
+            <span class="label">Formule :</span>
+            <span class="val" id="summary-formula">Confort</span>
+          </div>
+
+          <div class="summary-item">
+            <span class="label">Plateau :</span>
+            <span class="val" id="summary-plank">Mélaminé blanc</span>
+          </div>
+
+          <div class="summary-item">
+            <span class="label">Structure :</span>
+            <span class="val" id="summary-frame">Blanc Arctique</span>
+          </div>
+
+          <div class="summary-item">
+            <span class="label">Accessoires :</span>
+            <span class="val" id="summary-accessories">Aucun</span>
+          </div>
+
+          <div class="summary-item">
+            <span class="label">Durée leasing :</span>
+            <span class="val" id="summary-duration">24 mois</span>
+          </div>
+
+          <div class="summary-divider"></div>
+
+          <div class="summary-total">
+            <span class="label">Estimation mensuelle :</span>
+            <div class="val-price">
+              <span id="summary-monthly-price">41.65</span>
+              <span style="font-size: 0.9rem; color: rgba(255,255,255,0.7); font-weight:500;">€ HT / mois</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>StandingDesk</h4>
+          <p>Leasing de bureaux debout électriques haut de gamme pour les entreprises soucieuses de la santé de leurs équipes.</p>
+          <div class="social-links">
+            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg></a>
+            <a href="#" aria-label="Twitter/X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6m5.4 3c2.76 0 5 2.24 5 5s-2.24 5-5 5-5-2.24-5-5 2.24-5 5-5m0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6m4.85-.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5z"/></svg></a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h5>Produit</h5>
+          <ul>
+            <li><a href="#product">Spécifications</a></li>
+            <li><a href="#configurator">Configurateur</a></li>
+            <li><a href="#pricing">Tarifs Leasing</a></li>
+            <li><a href="#testimonials">Avis clients</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h5>Entreprise</h5>
+          <ul>
+            <li><a href="#">À propos</a></li>
+            <li><a href="#">Recrutement</a></li>
+            <li><a href="#">Presse</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h5>Légal</h5>
+          <ul>
+            <li><a href="#">Confidentialité</a></li>
+            <li><a href="#">Mentions légales</a></li>
+            <li><a href="#">CGV & leasing</a></li>
+            <li><a href="#">Cookies</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 StandingDesk SAS. Tous droits réservés.</p>
+        <p>Conçu avec soin pour la santé au travail.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP BUTTON -->
+  <button id="back-to-top" aria-label="Retourner en haut de la page">
+    <svg viewBox="0 0 24 24"><path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/></svg>
+  </button>
+
+  <!-- TOAST CONTAINER -->
+  <div id="toast-container" aria-live="assertive"></div>
+
+  <!-- INTERACTIVE JAVASCRIPT CODE -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      
+      // ────────────────────────────────────────────────────────────────────────
+      // CONSTANTS & DATABASE REFERENCE
+      // ────────────────────────────────────────────────────────────────────────
+      
+      const FORMULA_BASE_PRICES = {
+        "Essentiel": 29.00,
+        "Confort": 49.00,
+        "Premium": 79.00
+      };
+
+      const PLANK_UPCHARGES = {
+        "plank_melamine": 0.00,
+        "plank_black": 5.00,
+        "plank_bamboo": 8.00,
+        "plank_oak": 18.00,
+        "plank_walnut": 28.00
+      };
+
+      const PLANK_NAMES = {
+        "plank_melamine": "Mélaminé blanc",
+        "plank_black": "Mélaminé noir",
+        "plank_bamboo": "Bambou naturel",
+        "plank_oak": "Chêne massif",
+        "plank_walnut": "Noyer premium"
+      };
+
+      const PLANK_COLORS_SVG = {
+        "plank_melamine": "#F5F5F0",
+        "plank_black": "#1A1A1A",
+        "plank_bamboo": "#D4A853",
+        "plank_oak": "#A0522D",
+        "plank_walnut": "#5C3317"
+      };
+
+      const FRAME_UPCHARGES = {
+        "frame_white": 0.00,
+        "frame_black": 0.00,
+        "frame_silver": 5.00,
+        "frame_space_gray": 5.00,
+        "frame_champagne": 10.00,
+        "frame_forest": 8.00
+      };
+
+      const FRAME_NAMES = {
+        "frame_white": "Blanc Arctique",
+        "frame_black": "Noir Mat",
+        "frame_silver": "Argent Brossé",
+        "frame_space_gray": "Gris Sidéral",
+        "frame_champagne": "Champagne",
+        "frame_forest": "Vert Forêt"
+      };
+
+      const FRAME_COLORS_CSS = {
+        "frame_white": "#E8E8E8",
+        "frame_black": "#1C1C1C",
+        "frame_silver": "#B0B8C0",
+        "frame_space_gray": "#6B7280",
+        "frame_champagne": "#C8A96E",
+        "frame_forest": "#2D6A4F"
+      };
+
+      const ACCESSORY_UPCHARGES = {
+        "acc_monitor_arm": 6.00,
+        "acc_monitor_arm_dual": 10.00,
+        "acc_cable_mgmt": 3.00,
+        "acc_drawer": 5.00,
+        "acc_headset_hanger": 2.00,
+        "acc_anti_fatigue_mat": 4.00,
+        "acc_webcam": 3.00,
+        "acc_led_strip": 4.00
+      };
+
+      const ACCESSORY_NAMES = {
+        "acc_monitor_arm": "Bras écran simple",
+        "acc_monitor_arm_dual": "Bras double écran",
+        "acc_cable_mgmt": "Gouttière passe-câbles",
+        "acc_drawer": "Tiroir sous-plateau",
+        "acc_headset_hanger": "Accroche casque",
+        "acc_anti_fatigue_mat": "Tapis anti-fatigue",
+        "acc_webcam": "Support webcam",
+        "acc_led_strip": "Bande LED rétroéclairage"
+      };
+
+      const DURATION_MULTIPLIERS = {
+        "12": 1.00,
+        "24": 0.85,
+        "36": 0.75,
+        "48": 0.68
+      };
+
+      // ────────────────────────────────────────────────────────────────────────
+      // STATE MANAGEMENT
+      // ────────────────────────────────────────────────────────────────────────
+      
+      let state = {
+        formula: "Confort",
+        plank: "plank_melamine",
+        frame: "frame_white",
+        accessories: [],
+        duration: "24",
+        isStanding: false
+      };
+
+      // debounce utility to prevent quick double clicking issues
+      function debounce(func, wait) {
+        let timeout;
+        return function(...args) {
+          clearTimeout(timeout);
+          timeout = setTimeout(() => func.apply(this, args), wait);
+        };
+      }
+
+      // ────────────────────────────────────────────────────────────────────────
+      // INTERACTIVE FUNCTIONS (SVG + PRICE UPDATER)
+      // ────────────────────────────────────────────────────────────────────────
+      
+      const updateConfiguratorAndPrice = debounce(() => {
+        
+        // 1. Resolve constraints based on formula selection
+        const plankWalnutCard = document.getElementById("plank-card-plank_walnut");
+        const plankWalnutRadio = plankWalnutCard.querySelector("input");
+        
+        if (state.formula === "Essentiel") {
+          // Walnut plank is locked in Essentiel
+          plankWalnutCard.classList.add("disabled");
+          plankWalnutRadio.disabled = true;
+          if (state.plank === "plank_walnut") {
+            state.plank = "plank_melamine"; // reset to default
+            document.getElementById("plank-card-plank_melamine").querySelector("input").checked = true;
+            document.querySelectorAll(".plate-card").forEach(c => c.classList.remove("selected"));
+            document.getElementById("plank-card-plank_melamine").classList.add("selected");
+            showToast("Le plateau Noyer a été réinitialisé (non disponible en formule Essentiel)");
+          }
+        } else {
+          plankWalnutCard.classList.remove("disabled");
+          plankWalnutRadio.disabled = false;
+        }
+
+        // Show warning badge if Essentiel + premium accessories checked
+        // Premium accessories defined as: arm dual, led strip, drawer
+        const hasPremiumAccChecked = state.accessories.includes("acc_monitor_arm_dual") || 
+                                     state.accessories.includes("acc_led_strip") || 
+                                     state.accessories.includes("acc_drawer");
+        
+        const warningBadge = document.getElementById("essentiel-options-warning");
+        if (state.formula === "Essentiel" && hasPremiumAccChecked) {
+          warningBadge.style.display = "flex";
+        } else {
+          warningBadge.style.display = "none";
+        }
+
+        // 2. Math Calculations
+        const basePrice = FORMULA_BASE_PRICES[state.formula];
+        let optionsSum = 0;
+
+        optionsSum += PLANK_UPCHARGES[state.plank];
+        optionsSum += FRAME_UPCHARGES[state.frame];
+        
+        state.accessories.forEach(acc => {
+          optionsSum += ACCESSORY_UPCHARGES[acc];
+        });
+
+        const multiplier = DURATION_MULTIPLIERS[state.duration];
+        const monthlyPrice = (basePrice + optionsSum) * multiplier;
+        const roundedPrice = Math.round(monthlyPrice * 100) / 100;
+        const totalLeasePrice = Math.round(roundedPrice * parseInt(state.duration) * 100) / 100;
+
+        // 3. Update Text Content & Counter Animate
+        const priceNumElement = document.getElementById("calc-price-num");
+        animateNumber(priceNumElement, roundedPrice);
+
+        // Details string
+        let detailsText = `Formule <strong>${state.formula}</strong>`;
+        detailsText += ` + Plateau ${PLANK_NAMES[state.plank]}`;
+        detailsText += ` + Structure ${FRAME_NAMES[state.frame]}`;
+        
+        if (state.accessories.length > 0) {
+          detailsText += ` + Accessoires (${state.accessories.length} sélectionné(s))`;
+        }
+        detailsText += `.`;
+        document.getElementById("calc-price-description").innerHTML = detailsText;
+
+        // Total contract cost
+        document.getElementById("calc-price-total-lease").textContent = `Soit ${totalLeasePrice.toFixed(2)} € sur ${state.duration} mois.`;
+
+        // 4. Update SVG Visual Elements
+        
+        // Planks surfaces colors
+        const surfaceColor = PLANK_COLORS_SVG[state.plank];
+        document.getElementById("svg-tabletop-surface").setAttribute("fill", surfaceColor);
+        
+        // Thickness coloring (darker shades of wooden plateau)
+        const thicknessColor = darkenColor(surfaceColor, -20);
+        const sideThicknessColor = darkenColor(surfaceColor, -35);
+        document.getElementById("svg-tabletop-thickness").setAttribute("fill", thicknessColor);
+        document.getElementById("svg-tabletop-side-thickness").setAttribute("fill", sideThicknessColor);
+
+        // Frame / Leg colors
+        const frameColor = FRAME_COLORS_CSS[state.frame];
+        document.getElementById("svg-leg-bottom-left").setAttribute("fill", frameColor);
+        document.getElementById("svg-leg-bottom-right").setAttribute("fill", frameColor);
+        document.getElementById("svg-leg-mid-left").setAttribute("fill", darkenColor(frameColor, -10));
+        document.getElementById("svg-leg-mid-right").setAttribute("fill", darkenColor(frameColor, -10));
+        document.getElementById("svg-leg-top-left").setAttribute("fill", darkenColor(frameColor, -20));
+        document.getElementById("svg-leg-top-right").setAttribute("fill", darkenColor(frameColor, -20));
+
+        // SVG Accessories show/hide
+        
+        // Monitor Arm Simple
+        const svgArmSingle = document.getElementById("svg-monitor-arm-single");
+        const svgMonitorMount = document.getElementById("svg-monitor-mount");
+        const svgSingleScreen = document.getElementById("svg-single-screen");
+        const svgDualScreen = document.getElementById("svg-dual-screen");
+        const svgWebcam = document.getElementById("svg-webcam");
+
+        // Dual monitor arm
+        if (state.accessories.includes("acc_monitor_arm_dual")) {
+          svgDualScreen.style.opacity = "1";
+          svgSingleScreen.style.opacity = "0";
+          svgMonitorMount.style.opacity = "0";
+          svgArmSingle.style.opacity = "0";
+        } else {
+          svgDualScreen.style.opacity = "0";
+          svgSingleScreen.style.opacity = "1";
+          svgMonitorMount.style.opacity = "1";
+          
+          if (state.accessories.includes("acc_monitor_arm")) {
+            svgArmSingle.style.opacity = "1";
+          } else {
+            svgArmSingle.style.opacity = "0";
+          }
+        }
+
+        // Cable management
+        document.getElementById("svg-cable-mgmt").style.opacity = state.accessories.includes("acc_cable_mgmt") ? "1" : "0";
+        // Drawer
+        document.getElementById("svg-drawer").style.opacity = state.accessories.includes("acc_drawer") ? "1" : "0";
+        // Headphone hanger
+        document.getElementById("svg-headset-hanger").style.opacity = state.accessories.includes("acc_headset_hanger") ? "1" : "0";
+        // Webcam
+        svgWebcam.style.opacity = state.accessories.includes("acc_webcam") ? "1" : "0";
+        // LED strip
+        document.getElementById("svg-led-backlight").style.opacity = state.accessories.includes("acc_led_strip") ? "0.6" : "0";
+        // Anti fatigue mat
+        document.getElementById("svg-anti-fatigue-mat").style.opacity = state.accessories.includes("acc_anti_fatigue_mat") ? "1" : "0";
+
+        // 5. Update Contact Form Summary Box
+        document.getElementById("summary-formula").textContent = state.formula;
+        document.getElementById("summary-plank").textContent = PLANK_NAMES[state.plank];
+        document.getElementById("summary-frame").textContent = FRAME_NAMES[state.frame];
+        
+        let accessoriesSummary = "Aucun";
+        if (state.accessories.length > 0) {
+          accessoriesSummary = state.accessories.map(acc => ACCESSORY_NAMES[acc]).join(", ");
+        }
+        document.getElementById("summary-accessories").textContent = accessoriesSummary;
+        document.getElementById("summary-duration").textContent = `${state.duration} mois`;
+        document.getElementById("summary-monthly-price").textContent = roundedPrice.toFixed(2);
+
+        // Update hidden inputs in the form
+        document.getElementById("form-hidden-formula").value = state.formula;
+        document.getElementById("form-hidden-plank").value = PLANK_NAMES[state.plank];
+        document.getElementById("form-hidden-frame").value = FRAME_NAMES[state.frame];
+        document.getElementById("form-hidden-accessories").value = accessoriesSummary;
+        document.getElementById("form-hidden-duration").value = `${state.duration} mois`;
+        document.getElementById("form-hidden-monthly-price").value = roundedPrice.toFixed(2);
+
+      }, 50);
+
+      // Simple animation utility for counting numbers
+      function animateNumber(element, targetVal) {
+        const startVal = parseFloat(element.textContent) || 0.00;
+        if (startVal === targetVal) return;
+        
+        const duration = 300; // ms
+        const startTime = performance.now();
+
+        function update(currentTime) {
+          const elapsed = currentTime - startTime;
+          if (elapsed >= duration) {
+            element.textContent = targetVal.toFixed(2);
+            return;
+          }
+          const progress = elapsed / duration;
+          const currentVal = startVal + (targetVal - startVal) * progress;
+          element.textContent = currentVal.toFixed(2);
+          requestAnimationFrame(update);
+        }
+        requestAnimationFrame(update);
+      }
+
+      // Hex color lightener / darkener
+      function darkenColor(hex, percent) {
+        let num = parseInt(hex.replace("#",""), 16),
+        amt = Math.round(2.55 * percent),
+        R = (num >> 16) + amt,
+        G = (num >> 8 & 0x00FF) + amt,
+        B = (num & 0x0000FF) + amt;
+        return "#" + (0x1000000 + (R<255?R<0?0:R:255)*0x10000 + (G<255?G<0?0:G:255)*0x100 + (B<255?B<0?0:B:255)).toString(16).slice(1);
+      }
+
+      // ────────────────────────────────────────────────────────────────────────
+      // EVENT LISTENERS - CONTROLS
+      // ────────────────────────────────────────────────────────────────────────
+      
+      // Radio Formula selects
+      document.querySelectorAll('input[name="formula_select"]').forEach(input => {
+        input.addEventListener("change", (e) => {
+          state.formula = e.target.value;
+          
+          // update UI classes
+          document.querySelectorAll(".formula-card").forEach(c => c.classList.remove("selected"));
+          document.getElementById(`formula-card-${state.formula}`).classList.add("selected");
+          
+          showToast(`Formule ${state.formula} activée`);
+          updateConfiguratorAndPrice();
+        });
+      });
+
+      // Radio Plank selects
+      document.querySelectorAll('input[name="plank_select"]').forEach(input => {
+        input.addEventListener("change", (e) => {
+          state.plank = e.target.value;
+          
+          // update UI classes
+          document.querySelectorAll(".plate-card").forEach(c => c.classList.remove("selected"));
+          document.getElementById(`plank-card-${state.plank}`).classList.add("selected");
+          
+          showToast(`Plateau ${PLANK_NAMES[state.plank]} sélectionné`);
+          updateConfiguratorAndPrice();
+        });
+      });
+
+      // Radio Frame Swatches selects
+      document.querySelectorAll('input[name="frame_select"]').forEach(input => {
+        input.addEventListener("change", (e) => {
+          state.frame = e.target.value;
+          
+          showToast(`Finition ${FRAME_NAMES[state.frame]} appliquée`);
+          updateConfiguratorAndPrice();
+        });
+      });
+
+      // Checkbox Accessories
+      document.querySelectorAll('input[name="accessory_select"]').forEach(input => {
+        input.addEventListener("change", (e) => {
+          const val = e.target.value;
+          const parentLabel = document.getElementById(`acc-item-${val}`);
+          
+          if (e.target.checked) {
+            state.accessories.push(val);
+            parentLabel.classList.add("checked");
+            showToast(`Option : ${ACCESSORY_NAMES[val]} ajoutée`);
+          } else {
+            state.accessories = state.accessories.filter(item => item !== val);
+            parentLabel.classList.remove("checked");
+            showToast(`Option : ${ACCESSORY_NAMES[val]} retirée`);
+          }
+          updateConfiguratorAndPrice();
+        });
+      });
+
+      // Radio Duration selects (Configurator)
+      document.querySelectorAll('input[name="config_duration_select"]').forEach(input => {
+        input.addEventListener("change", (e) => {
+          state.duration = e.target.value;
+          showToast(`Engagement leasing : ${state.duration} mois`);
+          updateConfiguratorAndPrice();
+        });
+      });
+
+      // Height Testing controls
+      const btnSitting = document.getElementById("height-btn-sitting");
+      const btnStanding = document.getElementById("height-btn-standing");
+      
+      const deskTopAssembly = document.getElementById("desk-top-assembly");
+      const legTopLeft = document.getElementById("svg-leg-top-left");
+      const legTopRight = document.getElementById("svg-leg-top-right");
+      const legMidLeft = document.getElementById("svg-leg-mid-left");
+      const legMidRight = document.getElementById("svg-leg-mid-right");
+
+      btnSitting.addEventListener("click", () => {
+        if (!state.isStanding) return;
+        state.isStanding = false;
+        
+        btnSitting.classList.add("active");
+        btnStanding.classList.remove("active");
+
+        // Animate down to sitting position (0 offset)
+        deskTopAssembly.style.transform = "translateY(0px)";
+        legTopLeft.style.transform = "translateY(0px)";
+        legTopRight.style.transform = "translateY(0px)";
+        legMidLeft.style.transform = "translateY(0px)";
+        legMidRight.style.transform = "translateY(0px)";
+        showToast("Passage en position assis (72 cm)");
+      });
+
+      btnStanding.addEventListener("click", () => {
+        if (state.isStanding) return;
+        state.isStanding = true;
+        
+        btnStanding.classList.add("active");
+        btnSitting.classList.remove("active");
+
+        // Animate up to standing position (60px offset)
+        deskTopAssembly.style.transform = "translateY(-60px)";
+        legTopLeft.style.transform = "translateY(-60px)";
+        legTopRight.style.transform = "translateY(-60px)";
+        legMidLeft.style.transform = "translateY(-30px)"; // middle telescopics move half distance
+        legMidRight.style.transform = "translateY(-30px)";
+        showToast("Passage en position debout (118 cm)");
+      });
+
+      // Select Pricing cards logic
+      document.querySelectorAll(".select-offer-btn").forEach(btn => {
+        btn.addEventListener("click", (e) => {
+          const formulaChosen = e.target.getAttribute("data-formula");
+          state.formula = formulaChosen;
+
+          // Sync radio checks in configurator
+          const formulaRadio = document.querySelector(`input[name="formula_select"][value="${formulaChosen}"]`);
+          formulaRadio.checked = true;
+          
+          // update UI classes in configurator
+          document.querySelectorAll(".formula-card").forEach(c => c.classList.remove("selected"));
+          document.getElementById(`formula-card-${formulaChosen}`).classList.add("selected");
+
+          updateConfiguratorAndPrice();
+
+          // Scroll smoothly to configurator
+          document.getElementById("configurator").scrollIntoView({ behavior: "smooth" });
+          showToast(`Formule ${formulaChosen} sélectionnée`);
+        });
+      });
+
+      // Pricing Tab switch durations (Pricing section)
+      document.querySelectorAll(".pricing-tab").forEach(tab => {
+        tab.addEventListener("click", (e) => {
+          const dur = e.target.getAttribute("data-duration");
+          
+          document.querySelectorAll(".pricing-tab").forEach(t => {
+            t.classList.remove("active");
+            t.setAttribute("aria-selected", "false");
+          });
+          e.target.classList.add("active");
+          e.target.setAttribute("aria-selected", "true");
+
+          // Sync duration state and select radio in configurator
+          state.duration = dur;
+          const configDurRadio = document.querySelector(`input[name="config_duration_select"][value="${dur}"]`);
+          if (configDurRadio) configDurRadio.checked = true;
+
+          // Re-calculate prices for the 3 main grid cards
+          updatePricingGridPrices(dur);
+          
+          updateConfiguratorAndPrice();
+        });
+      });
+
+      function updatePricingGridPrices(durationMonths) {
+        const mult = DURATION_MULTIPLIERS[durationMonths];
+        
+        // Essentiel base = 29
+        const essBase = Math.round(29 * mult * 100) / 100;
+        document.getElementById("price-card-essentiel").textContent = essBase.toFixed(2);
+        
+        // Confort base = 49 (with standard Bamboo 8 and simple arm 6 and installation 5, or just standard bases? let's stick to bases)
+        // Actually, pricing card confort has Bamboo 140x70, frame aluminium, simple arm, installation. 
+        // Bamboo: +8, simple arm: +6, install is free. So Base 49 + 8 + 6 = 63. No, Confort base card says "dès 49€". We will calculate base Confort price.
+        // Let's compute card price with specific presets if needed, or simply base + standard features shown:
+        // Essentiel shown features: Melamine (0), Frame (0) -> base = 29. Price = 29 * mult.
+        // Confort shown features: Bamboo (+8), Frame Alum (+0), Simple Arm (+6) -> base Confort card price = (49 + 8 + 6) * mult = 63 * mult.
+        // Premium shown features: Oak (+18), Frame premium (+5), Screen + all accessories included -> Base 79 + 18 + 5 = 102 * mult.
+        // Let's compute and show exactly these prices so the grids match.
+        // Wait, the pricing grid in section 5 says:
+        // Essentiel: "dès 29€/mois" (12 months engagement x1.0)
+        // Confort: "dès 49€/mois" (sans engagement? Let's check initial: 49 * 0.85 = 41.65). Wait!
+        // At 24 months, Essentiel: 29 * 0.85 = 24.65.
+        // Confort: 49 * 0.85 = 41.65.
+        // Premium: 79 * 0.85 = 67.15.
+        // So the pricing cards show the BASE prices multiplied by the duration factor! That is perfectly simple and consistent!
+        const confBase = Math.round(49 * mult * 100) / 100;
+        document.getElementById("price-card-confort").textContent = confBase.toFixed(2);
+
+        const premBase = Math.round(79 * mult * 100) / 100;
+        document.getElementById("price-card-premium").textContent = premBase.toFixed(2);
+      }
+
+      // ────────────────────────────────────────────────────────────────────────
+      // FORM VALIDATIONS & MESSAGES
+      // ────────────────────────────────────────────────────────────────────────
+      
+      const devisForm = document.getElementById("devis-form");
+      const textareaComments = document.getElementById("comments");
+      const charCounter = document.getElementById("comments-char-count");
+
+      // Character counter message
+      textareaComments.addEventListener("input", (e) => {
+        const count = e.target.value.length;
+        charCounter.textContent = `${count} / 500`;
+      });
+
+      // Quantity validation
+      const qtyInput = document.getElementById("quantity");
+      qtyInput.addEventListener("input", (e) => {
+        const val = parseInt(e.target.value);
+        const errMin = document.getElementById("error-quantity");
+        const errMax = document.getElementById("error-quantity-max");
+        
+        if (val < 1 || isNaN(val)) {
+          errMin.style.display = "block";
+          qtyInput.classList.add("error");
+        } else {
+          errMin.style.display = "none";
+          qtyInput.classList.remove("error");
+        }
+
+        if (val > 500) {
+          errMax.style.display = "block";
+        } else {
+          errMax.style.display = "none";
+        }
+      });
+
+      // Submit Handler
+      devisForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        let isValid = true;
+
+        // Reset errors
+        document.querySelectorAll(".form-error-msg").forEach(el => {
+          if (el.id !== "error-quantity-max") el.style.display = "none";
+        });
+        document.querySelectorAll(".form-input").forEach(el => el.classList.remove("error"));
+        document.getElementById("rgpd-container").classList.remove("error");
+
+        // Validate Fullname
+        const fullname = document.getElementById("first-name");
+        if (!fullname.value.trim()) {
+          document.getElementById("error-fullname").style.display = "block";
+          fullname.classList.add("error");
+          if (isValid) fullname.focus();
+          isValid = false;
+        }
+
+        // Validate Email
+        const email = document.getElementById("email");
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email.value.trim())) {
+          document.getElementById("error-email").style.display = "block";
+          email.classList.add("error");
+          if (isValid) email.focus();
+          isValid = false;
+        }
+
+        // Validate Quantity
+        const qtyVal = parseInt(qtyInput.value);
+        if (qtyVal < 1 || isNaN(qtyVal)) {
+          document.getElementById("error-quantity").style.display = "block";
+          qtyInput.classList.add("error");
+          if (isValid) qtyInput.focus();
+          isValid = false;
+        } else if (qtyVal > 500) {
+          // Block submission for quantities > 500
+          document.getElementById("error-quantity-max").scrollIntoView({ behavior: "smooth" });
+          isValid = false;
+        }
+
+        // Validate RGPD
+        const rgpd = document.getElementById("rgpd");
+        if (!rgpd.checked) {
+          document.getElementById("error-rgpd").style.display = "block";
+          document.getElementById("rgpd-container").classList.add("error");
+          isValid = false;
+        }
+
+        if (isValid) {
+          // Simulating form submission
+          const loadingPanel = document.getElementById("devis-loading-panel");
+          const successPanel = document.getElementById("devis-success-panel");
+          const submitBtn = document.getElementById("submit-devis-btn");
+
+          devisForm.style.display = "none";
+          loadingPanel.style.display = "flex";
+          submitBtn.disabled = true;
+
+          setTimeout(() => {
+            loadingPanel.style.display = "none";
+            successPanel.style.display = "block";
+            showToast("Votre configuration a été envoyée avec succès !");
+          }, 1500);
+        }
+      });
+
+      // ────────────────────────────────────────────────────────────────────────
+      // ACCORDION FAQ LOGIC
+      // ────────────────────────────────────────────────────────────────────────
+      
+      document.querySelectorAll(".faq-question").forEach(q => {
+        q.addEventListener("click", () => {
+          const item = q.parentElement;
+          const answer = item.querySelector(".faq-answer");
+          const isActive = item.classList.contains("active");
+
+          // Close all first
+          document.querySelectorAll(".faq-item").forEach(i => {
+            i.classList.remove("active");
+            i.querySelector(".faq-answer").style.maxHeight = null;
+          });
+
+          if (!isActive) {
+            item.classList.add("active");
+            answer.style.maxHeight = answer.scrollHeight + "px";
+          }
+        });
+      });
+
+      // ────────────────────────────────────────────────────────────────────────
+      // NAVBAR & WINDOW EVENTS
+      // ────────────────────────────────────────────────────────────────────────
+      
+      const mainNav = document.getElementById("main-nav");
+      const progressIndicator = document.getElementById("scroll-progress");
+      const backToTopBtn = document.getElementById("back-to-top");
+      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+      const navMenu = document.getElementById("nav-menu");
+
+      window.addEventListener("scroll", () => {
+        // Sticky Header shrink
+        if (window.scrollY > 50) {
+          mainNav.classList.add("scrolled");
+        } else {
+          mainNav.classList.remove("scrolled");
+        }
+
+        // Scroll Progress Bar
+        const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        progressIndicator.style.width = scrolled + "%";
+
+        // Back to top button visibility
+        if (window.scrollY > 400) {
+          backToTopBtn.classList.add("visible");
+        } else {
+          backToTopBtn.classList.remove("visible");
+        }
+      });
+
+      // Back to top click
+      backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      // Mobile Menu hamburger toggle
+      mobileMenuBtn.addEventListener("click", () => {
+        const isExpanded = mobileMenuBtn.getAttribute("aria-expanded") === "true";
+        mobileMenuBtn.setAttribute("aria-expanded", !isExpanded);
+        mobileMenuBtn.classList.toggle("active");
+        navMenu.classList.toggle("active");
+      });
+
+      // Close menu when clicking link
+      document.querySelectorAll(".nav-links a").forEach(link => {
+        link.addEventListener("click", () => {
+          mobileMenuBtn.setAttribute("aria-expanded", "false");
+          mobileMenuBtn.classList.remove("active");
+          navMenu.classList.remove("active");
+        });
+      });
+
+      // ────────────────────────────────────────────────────────────────────────
+      // TOAST NOTIFICATIONS
+      // ────────────────────────────────────────────────────────────────────────
+      
+      function showToast(message) {
+        const container = document.getElementById("toast-container");
+        
+        const toast = document.createElement("div");
+        toast.className = "toast";
+        toast.textContent = message;
+        
+        container.appendChild(toast);
+        
+        // Trigger reflow to apply transition
+        toast.offsetHeight;
+        
+        toast.classList.add("show");
+        
+        // Remove after 3 seconds
+        setTimeout(() => {
+          toast.classList.remove("show");
+          setTimeout(() => {
+            container.removeChild(toast);
+          }, 300);
+        }, 3000);
+      }
+
+      // Initialize configurator and cards on load
+      updatePricingGridPrices("24"); // load initial base prices for Confort 24
+      updateConfiguratorAndPrice();  // load preview state
+    });
+  </script>
+</body>
+</html>
